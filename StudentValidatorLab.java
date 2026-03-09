@@ -10,7 +10,9 @@ public class StudentValidatorLab {
 
         Scanner scanner = new Scanner(System.in);
 
+        // =====================================================
         // PART 1 — NAME VALIDATION
+        // =====================================================
         System.out.print("Enter full name: ");
         String fullName = scanner.nextLine();
 
@@ -20,7 +22,9 @@ public class StudentValidatorLab {
             System.out.println("Invalid name");
         }
 
+        // =====================================================
         // PART 2 — STUDENT ID VALIDATION
+        // =====================================================
         System.out.print("Enter student ID (S-1234): ");
         String studentId = scanner.nextLine();
 
@@ -30,7 +34,9 @@ public class StudentValidatorLab {
             System.out.println("Invalid student ID");
         }
 
+        // =====================================================
         // PART 3 — EMAIL VALIDATION
+        // =====================================================
         System.out.print("Enter email: ");
         String email = scanner.nextLine();
 
@@ -40,7 +46,9 @@ public class StudentValidatorLab {
             System.out.println("Invalid email");
         }
 
+        // =====================================================
         // PART 4 — SENTENCE PROCESSING
+        // =====================================================
         System.out.print("Enter a sentence: ");
         String sentence = scanner.nextLine();
 
@@ -58,6 +66,29 @@ public class StudentValidatorLab {
 
         String hiddenDigits = sentence.replaceAll("\\d", "*");
         System.out.println("Sentence with digits replaced: " + hiddenDigits);
+
+        // =====================================================
+        // PART 5 — TOKENIZING
+        // =====================================================
+        String courses = "Math,Science,Java,English";
+        String[] courseArray = courses.split(",");
+
+        System.out.println("Courses:");
+        for (String course : courseArray) {
+            System.out.println(course);
+        }
+
+        // =====================================================
+        // PART 6 — PATTERN & MATCHER
+        // =====================================================
+        String mixedText = "Invoice number is 4567 and total is 890";
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(mixedText);
+
+        System.out.println("Extracted numbers:");
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
 
         scanner.close();
     }
