@@ -40,6 +40,25 @@ public class StudentValidatorLab {
             System.out.println("Invalid email");
         }
 
+        // PART 4 — SENTENCE PROCESSING
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
+
+        int vowelCount = 0;
+        for (int i = 0; i < sentence.length(); i++) {
+            char ch = Character.toLowerCase(sentence.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("Number of vowels: " + vowelCount);
+
+        String reversed = new StringBuilder(sentence).reverse().toString();
+        System.out.println("Reversed sentence: " + reversed);
+
+        String hiddenDigits = sentence.replaceAll("\\d", "*");
+        System.out.println("Sentence with digits replaced: " + hiddenDigits);
+
         scanner.close();
     }
 }
